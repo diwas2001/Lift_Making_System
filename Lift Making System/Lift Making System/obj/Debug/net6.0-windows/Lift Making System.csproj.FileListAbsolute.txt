@@ -1,0 +1,17 @@
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\bin\Debug\net6.0-windows\Lift Making System.exe
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\bin\Debug\net6.0-windows\Lift Making System.deps.json
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\bin\Debug\net6.0-windows\Lift Making System.runtimeconfig.json
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\bin\Debug\net6.0-windows\Lift Making System.dll
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\bin\Debug\net6.0-windows\Lift Making System.pdb
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\Lift Making System.csproj.AssemblyReference.cache
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\Lift_Making_System.Form1.resources
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\Lift Making System.csproj.GenerateResource.cache
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\Lift Making System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\Lift Making System.AssemblyInfoInputs.cache
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\Lift Making System.AssemblyInfo.cs
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\Lift Making System.csproj.CoreCompileInputs.cache
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\Lift Making System.dll
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\refint\Lift Making System.dll
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\Lift Making System.pdb
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\Lift Making System.genruntimeconfig.cache
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\ref\Lift Making System.dll
