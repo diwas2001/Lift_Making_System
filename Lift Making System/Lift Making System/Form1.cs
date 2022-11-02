@@ -12,7 +12,7 @@ namespace Lift_Making_System
 
             Lift.Location = new Point(Lift.Location.X, Lift.Location.Y - 10);
             timerUp.Enabled = true;
-            if (Lift.Location.Y == 85)
+            if (Lift.Location.Y == 40)
             {
                 timerUp.Enabled = false;
             }
@@ -29,7 +29,7 @@ namespace Lift_Making_System
         {
             Lift.Location = new Point(Lift.Location.X, Lift.Location.Y + 10);
             timerDown.Enabled = true;
-            if (Lift.Location.Y == 385)
+            if (Lift.Location.Y == 460)
             {
                 timerDown.Enabled = false;
             }
@@ -63,24 +63,24 @@ namespace Lift_Making_System
 
         private void timerOpen_Tick(object sender, EventArgs e)
         {
-            if(Lift.Location.Y == 385)
+            if(Lift.Location.Y == 460)
             {
                 Left_Door.Location = new Point(Left_Door.Location.X - 10, Left_Door.Location.Y);
                 Right_Door.Location = new Point(Right_Door.Location.X + 10, Right_Door.Location.Y);
                 timerOpen.Enabled = true;
-                if (Left_Door.Location.X == 101)
+                if (Left_Door.Location.X == 114)
                 {
                     timerOpen.Enabled = false;
 
 
                 }
             }
-            if(Lift.Location.Y == 85)
+            if(Lift.Location.Y == 40)
             {
                First_Floor_Left.Location = new Point(First_Floor_Left.Location.X - 10, First_Floor_Left.Location.Y);
                 First_Floor_Right.Location = new Point(First_Floor_Right.Location.X + 10, First_Floor_Right.Location.Y);
                 timerOpen.Enabled = true;
-                if (First_Floor_Left.Location.X == 101)
+                if (First_Floor_Left.Location.X == 114)
                 {
                     timerOpen.Enabled = false;
 
@@ -92,31 +92,56 @@ namespace Lift_Making_System
 
         private void timerClose_Tick(object sender, EventArgs e)
         {
-            if(Lift.Location.Y == 385)
+            if(Lift.Location.Y == 460)
             {
                 Left_Door.Location = new Point(Left_Door.Location.X + 10, Left_Door.Location.Y);
                 Right_Door.Location = new Point(Right_Door.Location.X - 10, Right_Door.Location.Y);
                 timerClose.Enabled = true;
-                if (Left_Door.Location.X == 171)
+                if (Left_Door.Location.X == 184)
                 {
                     timerClose.Enabled = false;
 
 
                 }
             }
-            if (Lift.Location.Y == 85)
+            if (Lift.Location.Y == 40)
             {
 
                 First_Floor_Left.Location = new Point(First_Floor_Left.Location.X + 10, First_Floor_Left.Location.Y);
                 First_Floor_Right.Location = new Point(First_Floor_Right.Location.X - 10, First_Floor_Right.Location.Y);
                 timerClose.Enabled = true;
-                if (First_Floor_Left.Location.X == 171)
+                if (First_Floor_Left.Location.X == 184)
                 {
                     timerClose.Enabled = false;
 
 
                 }
             }
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Left_Door_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
 
         }
     }
