@@ -1,8 +1,22 @@
+using Microsoft.VisualBasic.ApplicationServices;
+using Npgsql;
+using System.Data;
+
 namespace Lift_Making_System
 {
     public partial class Form1 : Form
     {
-        public Form1()
+
+        private string connstring = String.Format("Server ={0}; Port = {1};" +
+            "User Id ={2}; Password={3}; Database={4};",
+            "localhost",5433,"postgres","123456","lift");
+        private NpgsqlConnection conn;
+        private string sql;
+        private NpgsqlCommand cmd;
+        private DataTable dt;        
+
+
+public Form1()
         {
             InitializeComponent();
         }
@@ -40,16 +54,7 @@ namespace Lift_Making_System
         {
             timerDown.Enabled = true;
         }
-
-        private void Lift_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        
-
+  
         private void button1_Click(object sender, EventArgs e)
         {
             timerOpen.Enabled = true;
@@ -122,27 +127,36 @@ namespace Lift_Making_System
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           conn = new NpgsqlConnection(connstring);
+           Select(); 
         }
+        private void Select()
+        {
+           try
+            {
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+                conn.Open();
+                sql = @"select * from elevator_select()";
+                cmd = new NpgsqlCommand(sql, conn);
+                dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                conn.Close();
+                dgvData.DataSource = null;
+                dgvData.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                MessageBox.Show("error: " +ex.Message);
+            }
+        
+        }
+        private void Insert()
         {
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void Left_Door_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

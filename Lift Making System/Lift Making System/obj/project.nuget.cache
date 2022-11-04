@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "aMxs0Re6lCf5iSqZZDxgmKIRDYbmFyCMhHiMKHtQd1OvvIrQdxELEpd3HuKnBkWzzGoj1UJvhy9nwGqtBmfdRg==",
+  "dgSpecHash": "4SFBvO1OIETzNtjydYqF9b/BcdjO3B/e9y54s5uN68yVkamD63M4qVRqTxFyOL+ROiEhK3iYl9crPJM/8DHjdw==",
   "success": true,
   "projectFilePath": "C:\\Users\\LEGION\\source\\C#project\\Lift Making System\\Lift Making System\\Lift Making System.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\LEGION\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.2\\microsoft.extensions.logging.abstractions.6.0.2.nupkg.sha512",
+    "C:\\Users\\LEGION\\.nuget\\packages\\npgsql\\7.0.0-rc.2\\npgsql.7.0.0-rc.2.nupkg.sha512",
+    "C:\\Users\\LEGION\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
