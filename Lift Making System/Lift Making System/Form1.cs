@@ -33,11 +33,109 @@ public Form1()
 
 
         }
-
         private void buttonUp_Click(object sender, EventArgs e)
         {
             timerUp.Enabled = true;
+            Insert(sender,e);
+            Select();
+            // {
+
+
+            // MessageBox.Show(getValue);
+
+
+            /*  if (getValue == "Up")
+              {
+                  string details = "Going up from Ground Floor to First Floor.";
+
+              }
+              else
+              {
+                  return "Invalid";
+              }*/
         }
+        public static string Button(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            // MessageBox.Show(clicked.Text);
+            if (button.Text == "Up")
+            {
+                return button.Text;
+            }
+            else if (button.Name == "Down")
+            {
+                return button.Text;
+            }
+            else if (button.Name == "Open")
+            {
+                return button.Text;
+            }
+            else
+            {
+                return button.Text;
+            }
+
+        }
+
+        public string Details(object sender, EventArgs e)
+        {
+            Button clicked = (Button)sender;
+
+            switch (clicked.Text)
+            {
+                case "Up":
+                    if (timerUp.Enabled)
+                    {
+                        return "Went Up from Ground Floor to First Floor";
+
+                    }
+                    else
+                    {
+                        return "";
+                    }
+
+                case "Down":
+                    if (timerDown.Enabled)
+                    {
+                        return "Went Down from First Floor to Ground Floor";
+                    }
+                    else
+                    {
+                        return "";
+                    }
+
+                case "buttonOpen":
+                    if (timerOpen.Enabled && Lift.Location.Y == 460)
+                    {
+                        return "Door opened at Ground Floor";
+                    }
+
+                    else if (timerOpen.Enabled && Lift.Location.Y == 40)
+                    {
+                        return "Door opened at First Floor";
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                case "buttonClose":
+                    if (timerClose.Enabled && Lift.Location.Y == 460)
+                    {
+                        return "Door closed at Ground Floor";
+                    }
+                    else if (timerClose.Enabled && Lift.Location.Y == 40)
+                    {
+                        return "Door closed at First Floor";
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                default: return "";
+            }
+        }
+
+
 
         private void timerDown_Tick(object sender, EventArgs e)
         {
@@ -49,21 +147,70 @@ public Form1()
             }
 
         }
-
-        private void buttonDown_Click(object sender, EventArgs e)
+        private void buttonDown_Click_1(object sender, EventArgs e)
         {
             timerDown.Enabled = true;
+            Insert(sender, e);
+            Select();
+            /* String getValue = ((Button)sender).Text; //this will get the value of the text using sender
+                                                      //}
+
+             // MessageBox.Show(getValue);
+             if (getValue == "Down")
+             {
+                 string details = "Going down from FIrst Floor to Ground Floor.";
+                 return getValue + details;
+             }
+             else
+             {
+                 return "Invalid Error";
+             }*/
         }
-  
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             timerOpen.Enabled = true;
+            String getValue = ((Button)sender).Text;
+            Insert(sender, e);
+            Select();//this will get the value of the text using sender
+                     //}
 
+            //MessageBox.Show(getValue);
+            if (getValue ==  "Open" && Lift.Location.Y == 40)
+            {
+                string details = "Opened door at First Floor";
+                MessageBox.Show(details);
+
+            }
+            else
+            {
+                string details = "Opened door at Ground Floor";
+                MessageBox.Show(details);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             timerClose.Enabled = true;
+            String getValue = ((Button)sender).Text;
+            Insert(sender, e);
+            Select();//this will get the value of the text using sender
+                     //}
+
+            // MessageBox.Show(getValue);
+            if (getValue == "close" && Lift.Location.Y == 40)
+            {
+                string details = "close door at First Floor";
+                MessageBox.Show(details);
+
+            }
+            else
+            {
+                string details = "close door at Ground Floor";
+                MessageBox.Show(details);
+            }
+
         }
 
         private void timerOpen_Tick(object sender, EventArgs e)
@@ -92,6 +239,7 @@ public Form1()
 
                 }
             }
+
            
         }
 
@@ -151,12 +299,36 @@ public Form1()
             }
         
         }
-        private void Insert()
+
+
+        private void Insert(Object sender, EventArgs e)
         {
+            string btn = Button((Button)sender, e);
+            string details = Details((Button)sender, e);
+
+
+            try
+            {
+                conn.Open();
+                sql = String.Format("insert into elevator(button_clicked,button_date,button_time,button_deatils) values('{0}','{1}', '{2}', '{3}')", btn, DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("hh:mm:ss tt"),details);
+                cmd = new NpgsqlCommand(sql, conn);
+                /*cmd.Parameters.AddWithValue("Button_Clicked", btn);
+                cmd.Parameters.AddWithValue("Button_Date", DateTime.Now.ToString("dd/MM/yyyy"));
+                cmd.Parameters.AddWithValue("Button_time", DateTime.Now.ToString("hh:mm:ss tt"));
+                cmd.Parameters.AddWithValue("Button_deatils", details);*/
+                cmd.ExecuteScalar();
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                conn.Close();
+            }
+
 
         }
 
-
-      
+       
     }
 }

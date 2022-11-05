@@ -46,6 +46,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.log = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Lift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Left_Door)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Right_Door)).BeginInit();
@@ -74,18 +75,20 @@
             this.buttonUp.Name = "buttonUp";
             this.buttonUp.Size = new System.Drawing.Size(118, 131);
             this.buttonUp.TabIndex = 1;
+            this.buttonUp.Text = "Up";
             this.buttonUp.UseVisualStyleBackColor = true;
             this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
             // 
             // buttonDown
             // 
             this.buttonDown.Image = ((System.Drawing.Image)(resources.GetObject("buttonDown.Image")));
-            this.buttonDown.Location = new System.Drawing.Point(479, 340);
+            this.buttonDown.Location = new System.Drawing.Point(490, 340);
             this.buttonDown.Name = "buttonDown";
             this.buttonDown.Size = new System.Drawing.Size(118, 133);
             this.buttonDown.TabIndex = 2;
+            this.buttonDown.Text = "Down";
             this.buttonDown.UseVisualStyleBackColor = true;
-            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
+            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click_1);
             // 
             // timerUp
             // 
@@ -127,22 +130,26 @@
             // 
             // buttonOpen
             // 
+            this.buttonOpen.BackColor = System.Drawing.SystemColors.Control;
             this.buttonOpen.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpen.Image")));
-            this.buttonOpen.Location = new System.Drawing.Point(388, 215);
+            this.buttonOpen.Location = new System.Drawing.Point(383, 215);
             this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(118, 119);
+            this.buttonOpen.Size = new System.Drawing.Size(123, 110);
             this.buttonOpen.TabIndex = 5;
-            this.buttonOpen.Text = " ";
-            this.buttonOpen.UseVisualStyleBackColor = true;
+            this.buttonOpen.Text = " Open";
+            this.buttonOpen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonOpen.UseVisualStyleBackColor = false;
             this.buttonOpen.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonClose
             // 
             this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
-            this.buttonClose.Location = new System.Drawing.Point(575, 220);
+            this.buttonClose.Location = new System.Drawing.Point(575, 215);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(125, 105);
+            this.buttonClose.Size = new System.Drawing.Size(125, 110);
             this.buttonClose.TabIndex = 6;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -200,11 +207,21 @@
             this.dgvData.Size = new System.Drawing.Size(810, 442);
             this.dgvData.TabIndex = 11;
             // 
+            // log
+            // 
+            this.log.Location = new System.Drawing.Point(801, 392);
+            this.log.Name = "log";
+            this.log.Size = new System.Drawing.Size(94, 29);
+            this.log.TabIndex = 12;
+            this.log.Text = "log";
+            this.log.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1739, 881);
+            this.Controls.Add(this.log);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.First_Floor_Right);
             this.Controls.Add(this.First_Floor_Left);
@@ -250,5 +267,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private DataGridView dgvData;
+        private Button log;
     }
 }
