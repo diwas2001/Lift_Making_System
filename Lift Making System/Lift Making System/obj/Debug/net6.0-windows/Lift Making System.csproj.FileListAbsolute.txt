@@ -19,3 +19,5 @@ C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug
 C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\bin\Debug\net6.0-windows\Npgsql.dll
 C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\obj\Debug\net6.0-windows\Lift Making System.csproj.CopyComplete
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\bin\Debug\net6.0-windows\System.Speech.dll
+C:\Users\LEGION\source\C#project\Lift Making System\Lift Making System\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Speech.dll

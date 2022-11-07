@@ -1,11 +1,14 @@
 using Microsoft.VisualBasic.ApplicationServices;
 using Npgsql;
 using System.Data;
+using System.Media;
 
 namespace Lift_Making_System
 {
     public partial class Form1 : Form
     {
+
+        System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer(@"C:\Users\LEGION\Downloads\sound.wav");   
 
         private string connstring = String.Format("Server ={0}; Port = {1};" +
             "User Id ={2}; Password={3}; Database={4};",
@@ -35,6 +38,8 @@ public Form1()
         }
         private void buttonUp_Click(object sender, EventArgs e)
         {
+            soundPlayer.Play();
+            Task.Delay(200);
             timerUp.Enabled = true;
             Insert(sender,e);
             Select();
@@ -149,6 +154,8 @@ public Form1()
         }
         private void buttonDown_Click_1(object sender, EventArgs e)
         {
+            soundPlayer.Play();
+            Task.Delay(200);
             timerDown.Enabled = true;
             Insert(sender, e);
             Select();
@@ -180,13 +187,13 @@ public Form1()
             if (getValue ==  "Open" && Lift.Location.Y == 40)
             {
                 string details = "Opened door at First Floor";
-                MessageBox.Show(details);
+               // MessageBox.Show(details);
 
             }
             else
             {
                 string details = "Opened door at Ground Floor";
-                MessageBox.Show(details);
+                //MessageBox.Show(details);
             }
         }
 
@@ -202,13 +209,13 @@ public Form1()
             if (getValue == "close" && Lift.Location.Y == 40)
             {
                 string details = "close door at First Floor";
-                MessageBox.Show(details);
+                //MessageBox.Show(details);
 
             }
             else
             {
                 string details = "close door at Ground Floor";
-                MessageBox.Show(details);
+                //MessageBox.Show(details);
             }
 
         }
@@ -329,6 +336,24 @@ public Form1()
 
         }
 
-       
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           // this.dgvData.Visible = false;
+        }
+
+        private void log_Click(object sender, EventArgs e)
+        {
+            this.dgvData.Visible = true;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.dgvData.Visible = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

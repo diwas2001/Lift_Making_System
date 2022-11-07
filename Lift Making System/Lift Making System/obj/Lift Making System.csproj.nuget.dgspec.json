@@ -43,6 +43,10 @@
             "Npgsql": {
               "target": "Package",
               "version": "[7.0.0-rc.2, )"
+            },
+            "System.Speech": {
+              "target": "Package",
+              "version": "[7.0.0-rc.2.22472.3, )"
             }
           },
           "imports": [

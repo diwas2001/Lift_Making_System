@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "Lift Making System/1.0.0": {
         "dependencies": {
-          "Npgsql": "7.0.0-rc.2"
+          "Npgsql": "7.0.0-rc.2",
+          "System.Speech": "7.0.0-rc.2.22472.3"
         },
         "runtime": {
           "Lift Making System.dll": {}
@@ -34,7 +35,23 @@
           }
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {}
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "System.Speech/7.0.0-rc.2.22472.3": {
+        "runtime": {
+          "lib/net6.0/System.Speech.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Speech.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -63,6 +80,13 @@
       "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "System.Speech/7.0.0-rc.2.22472.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i+9Z/Vxuy+DIaOGT2P4SU3knBekKyqceIhqV7Nr00jiHdRHPCnDfTs57lI8yrbtSzT1dquFdbxap6X+8alV/ZQ==",
+      "path": "system.speech/7.0.0-rc.2.22472.3",
+      "hashPath": "system.speech.7.0.0-rc.2.22472.3.nupkg.sha512"
     }
   }
 }
