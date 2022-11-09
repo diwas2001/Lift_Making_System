@@ -2,6 +2,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 using Npgsql;
 using System.Data;
 using System.Media;
+using System.Security.Principal;
 
 namespace Lift_Making_System
 {
@@ -109,7 +110,7 @@ public Form1()
                         return "";
                     }
 
-                case "buttonOpen":
+                case "Open":
                     if (timerOpen.Enabled && Lift.Location.Y == 460)
                     {
                         return "Door opened at Ground Floor";
@@ -123,7 +124,7 @@ public Form1()
                     {
                         return "";
                     }
-                case "buttonClose":
+                case "Close":
                     if (timerClose.Enabled && Lift.Location.Y == 460)
                     {
                         return "Door closed at Ground Floor";
@@ -306,6 +307,27 @@ public Form1()
             }
         
         }
+        private void delete()
+        {
+            try
+            {
+
+                conn.Open();
+                sql =@"truncate elevator restart identity;"; 
+                cmd = new NpgsqlCommand(sql, conn);
+                dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                conn.Close();
+                dgvData.DataSource = null;
+                dgvData.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                MessageBox.Show("error: " + ex.Message);
+            }
+
+        }
 
 
         private void Insert(Object sender, EventArgs e)
@@ -338,12 +360,14 @@ public Form1()
 
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           // this.dgvData.Visible = false;
+            //this.dgvData.Visible = false;
+            this.label1.Visible = false;
         }
 
         private void log_Click(object sender, EventArgs e)
         {
             this.dgvData.Visible = true;
+            this.label1.Visible = true;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -353,7 +377,13 @@ public Form1()
 
         private void label1_Click(object sender, EventArgs e)
         {
+            //this.label1.Visible = false;
+        }
 
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            delete();
+            Select();
         }
     }
 }

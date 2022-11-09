@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lift = new System.Windows.Forms.PictureBox();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
@@ -51,6 +54,7 @@
             this.Hide = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btndelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Lift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Left_Door)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Right_Door)).BeginInit();
@@ -145,7 +149,7 @@
             this.buttonOpen.Name = "buttonOpen";
             this.buttonOpen.Size = new System.Drawing.Size(119, 90);
             this.buttonOpen.TabIndex = 5;
-            this.buttonOpen.Text = " Open";
+            this.buttonOpen.Text = "Open";
             this.buttonOpen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonOpen.UseVisualStyleBackColor = false;
             this.buttonOpen.Click += new System.EventHandler(this.button1_Click);
@@ -207,19 +211,46 @@
             // 
             // dgvData
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PeachPuff;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Transparent;
             this.dgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvData.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dgvData.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvData.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvData.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvData.Location = new System.Drawing.Point(780, 83);
             this.dgvData.Name = "dgvData";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.BlanchedAlmond;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvData.RowHeadersWidth = 51;
             this.dgvData.RowTemplate.Height = 29;
             this.dgvData.Size = new System.Drawing.Size(708, 442);
@@ -233,7 +264,7 @@
             this.log.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.log.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.log.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.log.Location = new System.Drawing.Point(966, 555);
+            this.log.Location = new System.Drawing.Point(1068, 557);
             this.log.Name = "log";
             this.log.Size = new System.Drawing.Size(153, 51);
             this.log.TabIndex = 12;
@@ -246,7 +277,7 @@
             this.Hide.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Hide.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Hide.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.Hide.Location = new System.Drawing.Point(1185, 555);
+            this.Hide.Location = new System.Drawing.Point(1242, 555);
             this.Hide.Name = "Hide";
             this.Hide.Size = new System.Drawing.Size(127, 53);
             this.Hide.TabIndex = 13;
@@ -267,19 +298,35 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(1049, 40);
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(1068, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 35);
             this.label1.TabIndex = 15;
             this.label1.Text = "Log Table";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btndelete
+            // 
+            this.btndelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btndelete.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btndelete.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btndelete.Location = new System.Drawing.Point(923, 559);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(119, 49);
+            this.btndelete.TabIndex = 16;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = false;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1739, 881);
+            this.Controls.Add(this.btndelete);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Hide);
             this.Controls.Add(this.log);
@@ -336,5 +383,6 @@
         private Button Hide;
         private PictureBox pictureBox3;
         private Label label1;
+        private Button btndelete;
     }
 }
